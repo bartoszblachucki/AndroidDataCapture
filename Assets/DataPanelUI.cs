@@ -5,48 +5,42 @@ namespace Visualisation
 {
     public class DataPanelUI : MonoBehaviour
     {
-        protected void UpdateUI(TextMeshProUGUI text, Vector3? value, string prefix)
+        protected void UpdateUI(DataUI dataUI, string label, Vector3? value)
         {
             if (value.HasValue)
             {
-                text.color = Color.green;
-                text.text = Format(value, prefix);
+                dataUI.SetData(label, value.ToString(), Color.green);
             }
             else
             {
-                text.color = Color.red;
-                text.text = Format("NO DATA", prefix);
+                dataUI.SetData(label, "NO DATA", Color.red);
             }
         }
 
-        protected void UpdateUI(TextMeshProUGUI text, float? value, string prefix)
+        protected void UpdateUI(DataUI dataUI, string label, float? value)
         {
             if (value.HasValue)
             {
-                text.color = Color.green;
-                text.text = Format(value, prefix);
+                dataUI.SetData(label, value.ToString(), Color.green);
             }
             else
             {
-                text.color = Color.red;
-                text.text = Format("NO DATA", prefix);
+                dataUI.SetData(label, "NO DATA", Color.red);
             }
         }
-    
-        protected void UpdateUI(TextMeshProUGUI text, Quaternion? value, string prefix)
+
+        protected void UpdateUI(DataUI dataUI, string label, Quaternion? value)
         {
             if (value.HasValue)
             {
-                text.color = Color.green;
-                text.text = Format(value, prefix);
+                dataUI.SetData(label, value.ToString(), Color.green);
             }
             else
             {
-                text.color = Color.red;
-                text.text = Format("NO DATA", prefix);
+                dataUI.SetData(label, "NO DATA", Color.red);
             }
         }
-    
+
         private string Format<T>(T value, string prefix)
         {
             return $"{prefix} : {value.ToString()}";
