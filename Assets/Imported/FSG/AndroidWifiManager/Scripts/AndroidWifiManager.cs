@@ -4,11 +4,11 @@
 #define PLATFORM_SUPPORTED
 #endif
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-namespace FSG.Android.Wifi
+namespace Imported.FSG.AndroidWifiManager.Scripts
 {
     /// <summary>
     /// Handles interop between Unity and the WifiManager Android class

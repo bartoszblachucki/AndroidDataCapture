@@ -1,45 +1,49 @@
-﻿using UnityEngine;
+﻿using UnityCommon;
+using UnityEngine;
 
-public class DataPanelUI : MonoBehaviour
+namespace DataVisualisation
 {
-    protected void UpdateUI(DataUI dataUI, string label, Vector3? value)
+    public class DataPanelUI : MonoBehaviour
     {
-        if (value.HasValue)
+        protected void UpdateUI(DataUI dataUI, string label, Nullable<Vector3> value)
         {
-            dataUI.SetData(label, value.ToString(), Color.green);
+            if (value.HasValue)
+            {
+                dataUI.SetData(label, value.ToString(), Color.green);
+            }
+            else
+            {
+                dataUI.SetData(label, "NO DATA", Color.red);
+            }
         }
-        else
-        {
-            dataUI.SetData(label, "NO DATA", Color.red);
-        }
-    }
 
-    protected void UpdateUI(DataUI dataUI, string label, float? value)
-    {
-        if (value.HasValue)
+        protected void UpdateUI(DataUI dataUI, string label, Nullable<float> value)
         {
-            dataUI.SetData(label, value.ToString(), Color.green);
+            if (value.HasValue)
+            {
+                dataUI.SetData(label, value.ToString(), Color.green);
+            }
+            else
+            {
+                dataUI.SetData(label, "NO DATA", Color.red);
+            }
         }
-        else
-        {
-            dataUI.SetData(label, "NO DATA", Color.red);
-        }
-    }
 
-    protected void UpdateUI(DataUI dataUI, string label, Quaternion? value)
-    {
-        if (value.HasValue)
+        protected void UpdateUI(DataUI dataUI, string label, Nullable<Quaternion> value)
         {
-            dataUI.SetData(label, value.ToString(), Color.green);
+            if (value.HasValue)
+            {
+                dataUI.SetData(label, value.ToString(), Color.green);
+            }
+            else
+            {
+                dataUI.SetData(label, "NO DATA", Color.red);
+            }
         }
-        else
-        {
-            dataUI.SetData(label, "NO DATA", Color.red);
-        }
-    }
 
-    private string Format<T>(T value, string prefix)
-    {
-        return $"{prefix} : {value.ToString()}";
+        private string Format<T>(T value, string prefix)
+        {
+            return $"{prefix} : {value.ToString()}";
+        }
     }
 }

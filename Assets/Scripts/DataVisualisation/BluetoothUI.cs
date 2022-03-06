@@ -1,15 +1,21 @@
 using TMPro;
 using UnityEngine;
 
-public class BluetoothUI : MonoBehaviour
+namespace DataVisualisation
 {
-    [SerializeField] private TextMeshProUGUI amountText;
-    
-    private void Update()
+    public class BluetoothUI : MonoBehaviour
     {
-        if (GameManager.CurrentBluetoothData == null)
-            return;
+        [SerializeField] private TextMeshProUGUI amountText;
+    
+        private void Update()
+        {
+            if (GameManager.CurrentBluetoothData == null)
+                return;
 
-        amountText.text = GameManager.CurrentBluetoothData.Count.ToString();
+            if (GameManager.CurrentBluetoothData.peripherals == null)
+                return;
+
+            amountText.text = GameManager.CurrentBluetoothData.peripherals.Count.ToString();
+        }
     }
 }

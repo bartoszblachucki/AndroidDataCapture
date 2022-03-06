@@ -1,4 +1,4 @@
-﻿namespace FSG.Android.Wifi
+﻿namespace Imported.FSG.AndroidWifiManager.Scripts
 {
     /// <summary>
     /// The current state of the device's wifi

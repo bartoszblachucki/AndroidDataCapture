@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using FSG.Android.Wifi;
+using DataSources;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,10 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float locationServiceTimeout;
     
     public static DeviceSensors.SensorData CurrentSensorData;
-    public static LocationInfo CurrentLocationData;
-    public static List<DeviceBluetooth.BluetoothPeripheral> CurrentBluetoothData;
-    public static List<BluetoothLEHardwareInterface.iBeaconData> CurrentBluetoothBeaconsData;
-    public static List<AndroidWifiScanResults> CurrentWifiData;
+    public static DeviceLocation.LocationData CurrentLocationData;
+    public static DeviceBluetooth.BluetoothData CurrentBluetoothData;
+    public static DeviceWifi.WifiData CurrentWifiData;
     
     private void Awake()
     {
@@ -33,7 +32,6 @@ public class GameManager : MonoBehaviour
         CurrentSensorData = DeviceSensors.GetSensorData();
         CurrentLocationData = DeviceLocation.GetLocationData();
         CurrentBluetoothData = DeviceBluetooth.GetBluetoothData();
-        CurrentBluetoothBeaconsData = DeviceBluetooth.GetBluetoothBeaconsData();
         CurrentWifiData = DeviceWifi.GetWifiData();
     }
 }

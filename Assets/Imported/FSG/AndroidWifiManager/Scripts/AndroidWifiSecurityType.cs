@@ -1,5 +1,5 @@
 ﻿
-namespace FSG.Android.Wifi
+namespace Imported.FSG.AndroidWifiManager.Scripts
 {
     /// <summary>
     /// The security setting of the network

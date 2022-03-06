@@ -1,11 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-namespace FSG.Android.Wifi
+namespace Imported.FSG.AndroidWifiManager.Scripts
 {
     /// <summary>
     /// C# representation of the ScanResults Android class
     /// </summary>
+    [System.Serializable]
     public class AndroidWifiScanResults
     {
         // The address of the access point.

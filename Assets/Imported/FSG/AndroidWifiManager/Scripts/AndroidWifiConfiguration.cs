@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace FSG.Android.Wifi
+namespace Imported.FSG.AndroidWifiManager.Scripts
 {
     /// <summary>
     /// C# representation of the WifiConfiguration Android class

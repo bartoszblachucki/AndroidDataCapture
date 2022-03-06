@@ -1,22 +1,25 @@
 using UnityEngine;
 
-public class GravityGizmo : MonoBehaviour
+namespace DataVisualisation
 {
-    private void Update()
+    public class GravityGizmo : MonoBehaviour
     {
-        if (GameManager.CurrentSensorData == null)
-            return;
+        private void Update()
+        {
+            if (GameManager.CurrentSensorData == null)
+                return;
         
-        if (!GameManager.CurrentSensorData.AttitudeData.HasValue)
-            return;
+            if (!GameManager.CurrentSensorData.AttitudeData.HasValue)
+                return;
 
-        var attitude = GameManager.CurrentSensorData.AttitudeData.Value;
-        var rotation = LeftToRightHandedRotation(attitude);
-        transform.rotation = rotation;
-    }
+            var attitude = GameManager.CurrentSensorData.AttitudeData.Value;
+            var rotation = LeftToRightHandedRotation(attitude);
+            transform.rotation = rotation;
+        }
 
-    private static Quaternion LeftToRightHandedRotation(Quaternion q)
-    {
-        return new Quaternion(q.x, q.y, -q.z, q.w);
+        private static Quaternion LeftToRightHandedRotation(Quaternion q)
+        {
+            return new Quaternion(q.x, q.y, -q.z, q.w);
+        }
     }
 }

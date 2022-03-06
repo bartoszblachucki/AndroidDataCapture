@@ -1,16 +1,19 @@
 using TMPro;
 using UnityEngine;
 
-public class DataUI : MonoBehaviour
+namespace DataVisualisation
 {
-    [SerializeField] private TextMeshProUGUI labelText;
-    [SerializeField] private TextMeshProUGUI valueText;
-
-    public void SetData(string label, string value, Color color)
+    public class DataUI : MonoBehaviour
     {
-        labelText.text = label;
-        valueText.text = value;
-        labelText.color = color;
-        valueText.color = color;
+        [SerializeField] private TextMeshProUGUI labelText;
+        [SerializeField] private TextMeshProUGUI valueText;
+
+        public void SetData(string label, string value, Color color)
+        {
+            labelText.text = label;
+            valueText.text = value;
+            labelText.color = color;
+            valueText.color = color;
+        }
     }
 }

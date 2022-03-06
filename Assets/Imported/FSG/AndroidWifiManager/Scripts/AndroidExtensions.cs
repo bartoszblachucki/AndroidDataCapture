@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using System.Text;
+﻿using System.Text;
+using UnityEngine;
 
-namespace FSG.Android.Wifi
+namespace Imported.FSG.AndroidWifiManager.Scripts
 {
     public static class AndroidExtensions
     {

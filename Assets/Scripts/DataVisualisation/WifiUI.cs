@@ -12,7 +12,7 @@ namespace DataVisualisation
             if (GameManager.CurrentWifiData == null)
                 return;
 
-            amountText.text = GameManager.CurrentWifiData.Count.ToString();
+            amountText.text = GameManager.CurrentWifiData.wifiScanResults.Count.ToString();
         }
     }
 }

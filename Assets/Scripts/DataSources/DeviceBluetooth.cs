@@ -1,105 +1,115 @@
 ﻿using System.Collections;
-using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
-public class DeviceBluetooth : MonoBehaviour
+namespace DataSources
 {
-    [SerializeField] private float scanIntervalInSeconds;
+    public class DeviceBluetooth : MonoBehaviour
+    {
+        [SerializeField] private float scanIntervalInSeconds;
 
-    private static DeviceBluetooth _instance;
+        private static DeviceBluetooth _instance;
 
-    private static readonly List<BluetoothPeripheral> BluetoothPeripherals = new List<BluetoothPeripheral>();
-    private static readonly List<BluetoothPeripheral> BluetoothPeripheralsInternal = new List<BluetoothPeripheral>();    
+        private static readonly List<BluetoothPeripheral> BluetoothPeripherals = new List<BluetoothPeripheral>();
+        private static readonly List<BluetoothPeripheral> BluetoothPeripheralsInternal = new List<BluetoothPeripheral>();    
     
-    private static readonly List<BluetoothLEHardwareInterface.iBeaconData> BluetoothBeacons = new List<BluetoothLEHardwareInterface.iBeaconData>();
-    private static readonly List<BluetoothLEHardwareInterface.iBeaconData> BluetoothBeaconsInternal = new List<BluetoothLEHardwareInterface.iBeaconData>();
+        private static readonly List<BluetoothLEHardwareInterface.iBeaconData> BluetoothBeacons = new List<BluetoothLEHardwareInterface.iBeaconData>();
+        private static readonly List<BluetoothLEHardwareInterface.iBeaconData> BluetoothBeaconsInternal = new List<BluetoothLEHardwareInterface.iBeaconData>();
 
-    private void Awake()
-    {
-        _instance = this;
-    }
-
-    public static void Enable()
-    {
-        Debug.Log("Initialising Bluetooth interface");
-
-        BluetoothLEHardwareInterface.Initialize(true, false, () => { Debug.Log("Bluetooth initialised"); },
-            (error) =>
-            {
-                Debug.Log("Error occured while initialising bluetooth: " + error);
-                if (error.Contains("Bluetooth LE Not Enabled"))
-                    BluetoothLEHardwareInterface.BluetoothEnable(true);
-            });
-
-        _instance.StartCoroutine(UpdateDataCoroutine());
-    }
-
-    public static List<BluetoothPeripheral> GetBluetoothData()
-    {
-        return BluetoothPeripherals;
-    }
-    
-    public static List<BluetoothLEHardwareInterface.iBeaconData> GetBluetoothBeaconsData()
-    {
-        return BluetoothBeacons;
-    }
-
-    private static IEnumerator UpdateDataCoroutine()
-    {
-        yield return new WaitForSecondsRealtime(1);
-
-        while (true)
+        private void Awake()
         {
-            BluetoothPeripherals.Clear();
-            BluetoothPeripherals.AddRange(BluetoothPeripheralsInternal);
-            BluetoothPeripheralsInternal.Clear();
-            
-
-            BluetoothLEHardwareInterface.ScanForPeripheralsWithServices(null, null,
-                HandlePeripheralDataReceived, true);
-            
-            BluetoothBeacons.Clear();
-            BluetoothBeacons.AddRange(BluetoothBeaconsInternal);
-            BluetoothBeaconsInternal.Clear();
-            BluetoothLEHardwareInterface.ScanForBeacons(null, HandleBeaconResponse);
-
-            yield return new WaitForSecondsRealtime(_instance.scanIntervalInSeconds);
+            _instance = this;
         }
-    }
 
-    private static void HandleBeaconResponse(BluetoothLEHardwareInterface.iBeaconData iBeaconData)
-    {
-        if (BluetoothBeaconsInternal.Any(x => x.UUID == iBeaconData.UUID))
-            return;
+        public static void Enable()
+        {
+            Debug.Log("Initialising Bluetooth interface");
+
+            BluetoothLEHardwareInterface.Initialize(true, false, () => { Debug.Log("Bluetooth initialised"); },
+                (error) =>
+                {
+                    Debug.Log("Error occured while initialising bluetooth: " + error);
+                    if (error.Contains("Bluetooth LE Not Enabled"))
+                        BluetoothLEHardwareInterface.BluetoothEnable(true);
+                });
+
+            _instance.StartCoroutine(UpdateDataCoroutine());
+        }
+
+        public static BluetoothData GetBluetoothData()
+        {
+            return new BluetoothData()
+            {
+                beacons = BluetoothBeacons,
+                peripherals = BluetoothPeripherals
+            };
+        }
+    
+        private static IEnumerator UpdateDataCoroutine()
+        {
+            yield return new WaitForSecondsRealtime(1);
+
+            while (true)
+            {
+                BluetoothPeripherals.Clear();
+                BluetoothPeripherals.AddRange(BluetoothPeripheralsInternal);
+                BluetoothPeripheralsInternal.Clear();
+            
+
+                BluetoothLEHardwareInterface.ScanForPeripheralsWithServices(null, null,
+                    HandlePeripheralDataReceived, true);
+            
+                BluetoothBeacons.Clear();
+                BluetoothBeacons.AddRange(BluetoothBeaconsInternal);
+                BluetoothBeaconsInternal.Clear();
+                BluetoothLEHardwareInterface.ScanForBeacons(null, HandleBeaconResponse);
+
+                yield return new WaitForSecondsRealtime(_instance.scanIntervalInSeconds);
+            }
+        }
+
+        private static void HandleBeaconResponse(BluetoothLEHardwareInterface.iBeaconData iBeaconData)
+        {
+            if (BluetoothBeaconsInternal.Any(x => x.UUID == iBeaconData.UUID))
+                return;
         
-        BluetoothBeaconsInternal.Add(iBeaconData);
-    }
+            BluetoothBeaconsInternal.Add(iBeaconData);
+        }
 
-    private static void HandlePeripheralDataReceived(string address, string name, int rssi, byte[] receivedBytes)
-    {
-        if (BluetoothPeripheralsInternal.Any(x => x.Address == address))
-            return;
-
-        var peripheral = new BluetoothPeripheral()
+        private static void HandlePeripheralDataReceived(string address, string name, int rssi, byte[] receivedBytes)
         {
-            Address = address,
-            Name = name,
-            Rssi = rssi
-        };
+            if (BluetoothPeripheralsInternal.Any(x => x.address == address))
+                return;
 
-        BluetoothPeripheralsInternal.Add(peripheral);
-    }
+            var peripheral = new BluetoothPeripheral()
+            {
+                address = address,
+                name = name,
+                rssi = rssi
+            };
 
-    public class BluetoothPeripheral
-    {
-        public string Address;
-        public string Name;
-        public int Rssi;
+            BluetoothPeripheralsInternal.Add(peripheral);
+        }
 
-        public override string ToString()
+        [System.Serializable]
+        public class BluetoothPeripheral
         {
-            return $"{Address} : {Name} : {Rssi}";
+            public string address;
+            public string name;
+            public int rssi;
+
+            public override string ToString()
+            {
+                return $"{address} : {name} : {rssi}";
+            }
+        }
+
+        [System.Serializable]
+        public class BluetoothData
+        {
+            public List<BluetoothPeripheral> peripherals;
+            public List<BluetoothLEHardwareInterface.iBeaconData> beacons;
         }
     }
 }

@@ -1,20 +1,21 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class BluetoothBeaconsUI : MonoBehaviour
+namespace DataVisualisation
 {
-    [SerializeField] private TextMeshProUGUI amountText;
-
-    private void Update()
+    public class BluetoothBeaconsUI : MonoBehaviour
     {
-        if (GameManager.CurrentBluetoothBeaconsData == null)
-            return;
+        [SerializeField] private TextMeshProUGUI amountText;
 
-        amountText.text = GameManager.CurrentBluetoothBeaconsData.Count.ToString();
-
-        foreach (var peripheral in GameManager.CurrentBluetoothBeaconsData)
+        private void Update()
         {
-            Debug.Log(peripheral.ToString());
+            if (GameManager.CurrentBluetoothData == null)
+                return;
+        
+            if (GameManager.CurrentBluetoothData.beacons == null)
+                return;
+
+            amountText.text = GameManager.CurrentBluetoothData.beacons.Count.ToString();
         }
     }
 }

@@ -86,6 +86,7 @@ public class BluetoothLEHardwareInterface
 		Far = 3,
 	}
 
+	[System.Serializable]
 	public struct iBeaconData
 	{
 		public string UUID;

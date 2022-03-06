@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Imported.FSG.AndroidWifiManager.Scripts;
 using UnityEngine;
 
-namespace FSG.Android.Wifi
+namespace Imported.FSG.AndroidWifiManager.Examples.Scripts
 {
     public class AndroidWifiManagerTester : MonoBehaviour
     {
@@ -28,9 +28,9 @@ namespace FSG.Android.Wifi
         /// </summary>
         private void Awake()
         {
-            m_currentState = AndroidWifiManager.GetWifiState();
-            m_configuredNetworks = AndroidWifiManager.GetConfiguredNetworks();
-            m_scanResults = AndroidWifiManager.GetScanResults();
+            m_currentState = AndroidWifiManager.Scripts.AndroidWifiManager.GetWifiState();
+            m_configuredNetworks = AndroidWifiManager.Scripts.AndroidWifiManager.GetConfiguredNetworks();
+            m_scanResults = AndroidWifiManager.Scripts.AndroidWifiManager.GetScanResults();
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace FSG.Android.Wifi
             if (m_connectingNetwork.securityType == AndroidWifiSecurityType.OPEN)
             {
                 Debug.Log("Auto connecting because the network has no security");
-                var result = AndroidWifiManager.Connect(m_connectingNetwork.SSID);
+                var result = AndroidWifiManager.Scripts.AndroidWifiManager.Connect(m_connectingNetwork.SSID);
                 Debug.LogFormat("Connect Result: {0}", result);
                 m_enteringPassword = false;
                 m_connectingNetwork = null;
@@ -114,9 +114,9 @@ namespace FSG.Android.Wifi
             m_password = GUILayout.TextField(m_password, m_passwordStyle);
             if (GUILayout.Button("Connect", m_buttonStyle))
             {
-                var result = AndroidWifiManager.Connect(m_connectingNetwork.SSID, m_password);
+                var result = AndroidWifiManager.Scripts.AndroidWifiManager.Connect(m_connectingNetwork.SSID, m_password);
                 Debug.LogFormat("Connect Result: {0}", result);
-                if (result == AndroidWifiManager.ConnectResult.SUCCESS)
+                if (result == AndroidWifiManager.Scripts.AndroidWifiManager.ConnectResult.SUCCESS)
                 {
                     m_enteringPassword = false;
                     m_connectingNetwork = null;
@@ -137,19 +137,19 @@ namespace FSG.Android.Wifi
             GUILayout.Space(10);
             if (GUILayout.Button("SetWifiEnabled(true)", m_buttonStyle))
             {
-                Debug.LogFormat("Set Wifi Enabled Result: {0}", AndroidWifiManager.SetWifiEnabled(true));
+                Debug.LogFormat("Set Wifi Enabled Result: {0}", AndroidWifiManager.Scripts.AndroidWifiManager.SetWifiEnabled(true));
             }
             GUILayout.Space(10);
             if (GUILayout.Button("SetWifiEnabled(false)", m_buttonStyle))
             {
-                Debug.LogFormat("Set Wifi Disabled Result: {0}", AndroidWifiManager.SetWifiEnabled(false));
+                Debug.LogFormat("Set Wifi Disabled Result: {0}", AndroidWifiManager.Scripts.AndroidWifiManager.SetWifiEnabled(false));
             }
-            GUILayout.Label(string.Format("Wifi Enabled: {0}", AndroidWifiManager.IsWifiEnabled()), m_textStyle);
+            GUILayout.Label(string.Format("Wifi Enabled: {0}", AndroidWifiManager.Scripts.AndroidWifiManager.IsWifiEnabled()), m_textStyle);
             GUILayout.Space(10);
             GUILayout.Label(string.Format("Wifi State: {0}", m_currentState), m_textStyle);
             if (GUILayout.Button("GetWifiState()", m_buttonStyle))
             {
-                m_currentState = AndroidWifiManager.GetWifiState();
+                m_currentState = AndroidWifiManager.Scripts.AndroidWifiManager.GetWifiState();
             }
             GUILayout.Space(10);
         }
@@ -157,12 +157,12 @@ namespace FSG.Android.Wifi
         {
             if (GUILayout.Button("StartScan()", m_buttonStyle))
             {
-                Debug.LogFormat("Starting Scan: {0}", AndroidWifiManager.StartScan());
+                Debug.LogFormat("Starting Scan: {0}", AndroidWifiManager.Scripts.AndroidWifiManager.StartScan());
             }
             GUILayout.Space(10);
             if (GUILayout.Button("GetScanResults()", m_buttonStyle))
             {
-                m_scanResults = AndroidWifiManager.GetScanResults();
+                m_scanResults = AndroidWifiManager.Scripts.AndroidWifiManager.GetScanResults();
             }
             GUILayout.Label(string.Format("Scan Results: {0}", m_scanResults.Count), m_textStyle);
             for (int i = 0; i < m_scanResults.Count; i++)
@@ -186,7 +186,7 @@ namespace FSG.Android.Wifi
         {
             if (GUILayout.Button("GetConfiguredNetworks()", m_buttonStyle))
             {
-                m_configuredNetworks = AndroidWifiManager.GetConfiguredNetworks();
+                m_configuredNetworks = AndroidWifiManager.Scripts.AndroidWifiManager.GetConfiguredNetworks();
             }
             GUILayout.Label(string.Format("Configured Networks: {0}", m_configuredNetworks.Count), m_textStyle);
             m_showOnlyCurrent = GUILayout.Toggle(m_showOnlyCurrent, "Show Only Current Network", m_toggleStyle);
@@ -204,9 +204,9 @@ namespace FSG.Android.Wifi
                             {
                                 if (GUILayout.Button("Disconnect", m_buttonListStyle))
                                 {
-                                    var callResult = AndroidWifiManager.Disconnect();
+                                    var callResult = AndroidWifiManager.Scripts.AndroidWifiManager.Disconnect();
                                     Debug.LogFormat("Disconnect Result: {0}", callResult);
-                                    m_configuredNetworks = AndroidWifiManager.GetConfiguredNetworks();
+                                    m_configuredNetworks = AndroidWifiManager.Scripts.AndroidWifiManager.GetConfiguredNetworks();
                                 }
                                 break;
                             }
@@ -214,9 +214,9 @@ namespace FSG.Android.Wifi
                             {
                                 if (GUILayout.Button("Enable", m_buttonListStyle))
                                 {
-                                    var callResult = AndroidWifiManager.EnableNetwork(config.networkId, false);
+                                    var callResult = AndroidWifiManager.Scripts.AndroidWifiManager.EnableNetwork(config.networkId, false);
                                     Debug.LogFormat("Enable Network Result: {0}", callResult);
-                                    m_configuredNetworks = AndroidWifiManager.GetConfiguredNetworks();
+                                    m_configuredNetworks = AndroidWifiManager.Scripts.AndroidWifiManager.GetConfiguredNetworks();
                                 }
                                 break;
                             }
@@ -224,18 +224,18 @@ namespace FSG.Android.Wifi
                             {
                                 if (GUILayout.Button("Disable", m_buttonListStyle))
                                 {
-                                    var callResult = AndroidWifiManager.DisableNetwork(config.networkId);
+                                    var callResult = AndroidWifiManager.Scripts.AndroidWifiManager.DisableNetwork(config.networkId);
                                     Debug.LogFormat("Disable Network Result: {0}", callResult);
-                                    m_configuredNetworks = AndroidWifiManager.GetConfiguredNetworks();
+                                    m_configuredNetworks = AndroidWifiManager.Scripts.AndroidWifiManager.GetConfiguredNetworks();
                                 }
                                 break;
                             }
                     }
                     if (GUILayout.Button("Forget", m_buttonListStyle))
                     {
-                        var callResult = AndroidWifiManager.RemoveNetwork(config.networkId);
+                        var callResult = AndroidWifiManager.Scripts.AndroidWifiManager.RemoveNetwork(config.networkId);
                         Debug.LogFormat("Forget Result: {0}", callResult);
-                        m_configuredNetworks = AndroidWifiManager.GetConfiguredNetworks();
+                        m_configuredNetworks = AndroidWifiManager.Scripts.AndroidWifiManager.GetConfiguredNetworks();
                     }
                 }
                 GUILayout.EndHorizontal();

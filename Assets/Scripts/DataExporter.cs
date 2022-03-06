@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using FSG.Android.Wifi;
+using DataSources;
 using UnityEngine;
 using Newtonsoft.Json;
 
@@ -11,23 +11,23 @@ public class DataExporter : MonoBehaviour
 
         var deviceData = new DeviceData()
         {
-            SensorData = GameManager.CurrentSensorData,
-            LocationData = GameManager.CurrentLocationData,
-            BluetoothData = GameManager.CurrentBluetoothData,
-            BluetoothBeaconsData = GameManager.CurrentBluetoothBeaconsData,
-            WifiData = GameManager.CurrentWifiData
+            sensorData = GameManager.CurrentSensorData,
+            locationData = GameManager.CurrentLocationData,
+            bluetoothData = GameManager.CurrentBluetoothData,
+            wifiData = GameManager.CurrentWifiData
         };
 
-        var json = JsonUtility.ToJson(deviceData);
+        var json = JsonUtility.ToJson(deviceData, true);
         Debug.Log(json);
     }
 
+    [System.Serializable]
     private class DeviceData
     {
-        public DeviceSensors.SensorData SensorData;
-        public LocationInfo LocationData;
-        public List<DeviceBluetooth.BluetoothPeripheral> BluetoothData;
-        public List<BluetoothLEHardwareInterface.iBeaconData> BluetoothBeaconsData;
-        public List<AndroidWifiScanResults> WifiData;
+        public DeviceSensors.SensorData sensorData;
+        public DeviceLocation.LocationData locationData;
+        public DeviceBluetooth.BluetoothData bluetoothData;
+        public List<BluetoothLEHardwareInterface.iBeaconData> bluetoothBeaconsData;
+        public DeviceWifi.WifiData wifiData;
     }
 }
