@@ -260,6 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 198862921}
   - component: {fileID: 198862920}
+  - component: {fileID: 198862922}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -279,9 +280,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c204697c1ae08c4296b6513b9fd0ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredAccuracyInMeters: 0
-  updateDistanceInMeters: 0
-  locationServiceTimeout: 0
+  desiredAccuracyInMeters: 1
+  updateDistanceInMeters: 1
+  locationServiceTimeout: 15
 --- !u!4 &198862921
 Transform:
   m_ObjectHideFlags: 0
@@ -296,6 +297,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &198862922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198862919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7305d441f9d7fe04ea0f310f711fc871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &265802875
 PrefabInstance:
   m_ObjectHideFlags: 0

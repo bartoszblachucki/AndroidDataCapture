@@ -2,16 +2,10 @@
 using UnityEngine.InputSystem;
 using Gyroscope = UnityEngine.InputSystem.Gyroscope;
 
-public class DeviceSensors : MonoBehaviour
+public static class DeviceSensors
 {
-    private static DeviceSensors _instance;
     private static bool _enabled;
-        
-    private void Awake()
-    {
-        _instance = this;
-    }
-
+    
     private static readonly Sensor[] Sensors = {
         Accelerometer.current,
         Gyroscope.current,
