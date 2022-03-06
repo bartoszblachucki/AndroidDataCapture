@@ -24,9 +24,10 @@ public class DeviceLocation : MonoBehaviour
     private static IEnumerator InitialisationCoroutine(float desiredAccuracyInMeters, float updateDistanceInMeters, float timeoutInSeconds)
     {
         if (!UnityEngine.Android.Permission.HasUserAuthorizedPermission(UnityEngine.Android.Permission.FineLocation))
-        {
             UnityEngine.Android.Permission.RequestUserPermission(UnityEngine.Android.Permission.FineLocation);
-        }
+
+        if (!UnityEngine.Android.Permission.HasUserAuthorizedPermission(UnityEngine.Android.Permission.CoarseLocation))
+            UnityEngine.Android.Permission.RequestUserPermission(UnityEngine.Android.Permission.CoarseLocation);
 
         if (!Input.location.isEnabledByUser)
         {
@@ -35,7 +36,7 @@ public class DeviceLocation : MonoBehaviour
         }
         Debug.Log("Fine location enabled!");
 
-        Input.location.Start(desiredAccuracyInMeters, updateDistanceInMeters);
+        Input.location.Start();
 
         while (Input.location.status == LocationServiceStatus.Initializing && timeoutInSeconds > 0)
         {

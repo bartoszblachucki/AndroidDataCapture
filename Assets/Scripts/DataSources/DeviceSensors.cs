@@ -18,7 +18,7 @@ public static class DeviceSensors
         ProximitySensor.current,
         HumiditySensor.current,
         AmbientTemperatureSensor.current,
-        StepCounter.current
+        StepCounter.current,
     };
 
     public static void Enable()
