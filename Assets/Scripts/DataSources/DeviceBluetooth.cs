@@ -59,12 +59,10 @@ public class DeviceBluetooth : MonoBehaviour
             BluetoothLEHardwareInterface.ScanForPeripheralsWithServices(null, null,
                 HandlePeripheralDataReceived, true);
             
-            /*
             BluetoothBeacons.Clear();
             BluetoothBeacons.AddRange(BluetoothBeaconsInternal);
             BluetoothBeaconsInternal.Clear();
             BluetoothLEHardwareInterface.ScanForBeacons(null, HandleBeaconResponse);
-            */
 
             yield return new WaitForSecondsRealtime(_instance.scanIntervalInSeconds);
         }

@@ -11,10 +11,5 @@ public class BluetoothUI : MonoBehaviour
             return;
 
         amountText.text = GameManager.CurrentBluetoothData.Count.ToString();
-
-        foreach (var peripheral in GameManager.CurrentBluetoothData)
-        {
-            Debug.Log(peripheral.ToString());
-        }
     }
 }

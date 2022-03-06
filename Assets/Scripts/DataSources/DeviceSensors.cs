@@ -5,8 +5,9 @@ using Gyroscope = UnityEngine.InputSystem.Gyroscope;
 public static class DeviceSensors
 {
     private static bool _enabled;
-    
-    private static readonly Sensor[] Sensors = {
+
+    private static readonly Sensor[] Sensors =
+    {
         Accelerometer.current,
         Gyroscope.current,
         GravitySensor.current,
@@ -34,6 +35,7 @@ public static class DeviceSensors
             InputSystem.EnableDevice(sensor);
             enabledSensors++;
         }
+
         Debug.Log($"Enabled {enabledSensors} sensors");
 
         _enabled = true;
@@ -45,7 +47,7 @@ public static class DeviceSensors
         {
             if (sensor == null)
                 continue;
-                
+
             InputSystem.DisableDevice(sensor);
         }
 
@@ -56,7 +58,7 @@ public static class DeviceSensors
     {
         if (!_enabled)
             return new SensorData();
-            
+
         var accelerometerData = Accelerometer.current?.acceleration.ReadValue();
         var gyroscopeData = Gyroscope.current?.angularVelocity.ReadValue();
         var gravityData = GravitySensor.current?.gravity.ReadValue();

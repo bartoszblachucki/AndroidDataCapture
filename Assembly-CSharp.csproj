@@ -62,7 +62,6 @@
      <Compile Include="Assets\Scripts\DataVisualisation\LocationUI.cs" />
      <Compile Include="Assets\Scripts\DataSources\DeviceBluetooth.cs" />
      <Compile Include="Assets\Scripts\DataVisualisation\BluetoothUI.cs" />
-     <Compile Include="Assets\Scripts\DataVisualisation\BluetoothBeaconsUI.cs" />
      <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiState.cs" />
      <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidExtensions.cs" />
      <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiScanResults.cs" />
@@ -72,6 +71,9 @@
      <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiConfiguration.cs" />
      <Compile Include="Assets\Scripts\DataSources\DeviceWifi.cs" />
      <Compile Include="Assets\Scripts\DataVisualisation\WifiUI.cs" />
+     <Compile Include="Assets\Scripts\VolumeChangeListener.cs" />
+     <Compile Include="Assets\Scripts\DataExporter.cs" />
+     <Compile Include="Assets\Scripts\DataVisualisation\BluetoothBeaconsUI.cs" />
      <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -308,6 +310,9 @@
  </Reference>
  <Reference Include="Newtonsoft.Json">
  <HintPath>C:/GDT/AndroidDataCapture/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="NLayer">
+ <HintPath>C:/GDT/AndroidDataCapture/Assets/Imported/UnityCommon/Plugins/NLayer.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.27f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -692,6 +697,14 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{38b893fd-cdd5-94a4-6b34-f8fdbebc9c40}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="Elringus.UnityCommon.Editor.csproj">
+      <Project>{97c442de-845c-ca99-8359-0ac3e6eeabd5}</Project>
+      <Name>Elringus.UnityCommon.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Elringus.UnityCommon.Runtime.csproj">
+      <Project>{f88ce8fe-9b40-0126-0857-de2fa8067861}</Project>
+      <Name>Elringus.UnityCommon.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
