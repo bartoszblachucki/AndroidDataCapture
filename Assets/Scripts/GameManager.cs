@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FSG.Android.Wifi;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static LocationInfo CurrentLocationData;
     public static List<DeviceBluetooth.BluetoothPeripheral> CurrentBluetoothData;
     public static List<BluetoothLEHardwareInterface.iBeaconData> CurrentBluetoothBeaconsData;
-    //public static List<AndroidWifiScanResults> CurrentWifiData;
+    public static List<AndroidWifiScanResults> CurrentWifiData;
     
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
         DeviceSensors.Enable();
         DeviceLocation.Enable(desiredAccuracyInMeters, updateDistanceInMeters, locationServiceTimeout);
         DeviceBluetooth.Enable();
-        //DeviceWifi.Enable();
+        DeviceWifi.Enable();
     }
 
     private void Update()
@@ -33,6 +34,6 @@ public class GameManager : MonoBehaviour
         CurrentLocationData = DeviceLocation.GetLocationData();
         CurrentBluetoothData = DeviceBluetooth.GetBluetoothData();
         CurrentBluetoothBeaconsData = DeviceBluetooth.GetBluetoothBeaconsData();
-        //CurrentWifiData = DeviceWifi.GetWifiData();
+        CurrentWifiData = DeviceWifi.GetWifiData();
     }
 }

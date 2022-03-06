@@ -52,7 +52,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Shatalmic\Editor\BluetoothPostProcessBuild.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Editor\AndroidWifiPermissionSetup.cs" />
+     <None Include="Assets\Imported\FSG\AndroidWifiManager\Editor\AndroidManifestTemplate.xml" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -701,6 +702,10 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{aa4c4a33-976b-c248-aa0f-1b0343af6e65}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{c446c3f2-0d93-c2bc-4e03-40154c9b0359}</Project>
+      <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -63,6 +63,15 @@
      <Compile Include="Assets\Scripts\DataSources\DeviceBluetooth.cs" />
      <Compile Include="Assets\Scripts\DataVisualisation\BluetoothUI.cs" />
      <Compile Include="Assets\Scripts\DataVisualisation\BluetoothBeaconsUI.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiState.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidExtensions.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiScanResults.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiManager.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Examples\Scripts\AndroidWifiManagerTester.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiSecurityType.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiConfiguration.cs" />
+     <Compile Include="Assets\Scripts\DataSources\DeviceWifi.cs" />
+     <Compile Include="Assets\Scripts\DataVisualisation\WifiUI.cs" />
      <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
