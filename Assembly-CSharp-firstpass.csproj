@@ -13,11 +13,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{aa4c4a33-976b-c248-aa0f-1b0343af6e65}</ProjectGuid>
+    <ProjectGuid>{38b893fd-cdd5-94a4-6b34-f8fdbebc9c40}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -52,38 +52,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\DataVisualisation\DataUI.cs" />
-     <Compile Include="Assets\Scripts\DataVisualisation\SensorsUI.cs" />
-     <Compile Include="Assets\Scripts\DataVisualisation\DataPanelUI.cs" />
-     <Compile Include="Assets\Scripts\DataVisualisation\GravityGizmo.cs" />
-     <Compile Include="Assets\Scripts\DataSources\DeviceSensors.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\DataSources\DeviceLocation.cs" />
-     <Compile Include="Assets\Scripts\DataVisualisation\LocationUI.cs" />
-     <Compile Include="Assets\Scripts\DataSources\DeviceBluetooth.cs" />
-     <Compile Include="Assets\Scripts\DataVisualisation\BluetoothUI.cs" />
-     <Compile Include="Assets\Scripts\DataVisualisation\BluetoothBeaconsUI.cs" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro.cginc" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+     <Compile Include="Assets\Plugins\BluetoothHardwareInterface.cs" />
+     <Compile Include="Assets\Plugins\BluetoothDeviceScript.cs" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -680,10 +651,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{38b893fd-cdd5-94a4-6b34-f8fdbebc9c40}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
