@@ -58,6 +58,8 @@
      <Compile Include="Assets\Scripts\GravityGizmo.cs" />
      <Compile Include="Assets\Scripts\DeviceSensors.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\DeviceLocation.cs" />
+     <Compile Include="Assets\Scripts\LocationUI.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

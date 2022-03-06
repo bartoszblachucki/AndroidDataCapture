@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float locationServiceTimeout;
     
     public static DeviceSensors.SensorData CurrentSensorData;
-    //public static LocationInfo CurrentLocationData;
+    public static LocationInfo CurrentLocationData;
     //public static List<AndroidWifiScanResults> CurrentWifiData;
     //public static List<DeviceBluetooth.BluetoothPeripheral> CurrentBluetoothData;
     
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DeviceSensors.Enable();
-        //DeviceLocation.Enable(desiredAccuracyInMeters, updateDistanceInMeters, locationServiceTimeout);
+        DeviceLocation.Enable(desiredAccuracyInMeters, updateDistanceInMeters, locationServiceTimeout);
         //DeviceWifi.Enable();
         //DeviceBluetooth.Enable();
     }
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         CurrentSensorData = DeviceSensors.GetSensorData();
-        //CurrentLocationData = DeviceLocation.GetLocationData();
+        CurrentLocationData = DeviceLocation.GetLocationData();
         //CurrentWifiData = DeviceWifi.GetWifiData();
         //CurrentBluetoothData = DeviceBluetooth.GetBluetoothData();
     }
