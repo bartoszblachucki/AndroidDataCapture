@@ -52,12 +52,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\DataUI.cs" />
-     <Compile Include="Assets\SensorsUI.cs" />
-     <Compile Include="Assets\DataPanelUI.cs" />
-     <Compile Include="Assets\GravityGizmo.cs" />
-     <Compile Include="Assets\DeviceSensors.cs" />
-     <Compile Include="Assets\GameManager.cs" />
+     <Compile Include="Assets\Scripts\DataUI.cs" />
+     <Compile Include="Assets\Scripts\SensorsUI.cs" />
+     <Compile Include="Assets\Scripts\DataPanelUI.cs" />
+     <Compile Include="Assets\Scripts\GravityGizmo.cs" />
+     <Compile Include="Assets\Scripts\DeviceSensors.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
