@@ -701,13 +701,13 @@
       <Project>{38b893fd-cdd5-94a4-6b34-f8fdbebc9c40}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
-    <ProjectReference Include="Elringus.UnityCommon.Editor.csproj">
-      <Project>{97c442de-845c-ca99-8359-0ac3e6eeabd5}</Project>
-      <Name>Elringus.UnityCommon.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Elringus.UnityCommon.Runtime.csproj">
       <Project>{f88ce8fe-9b40-0126-0857-de2fa8067861}</Project>
       <Name>Elringus.UnityCommon.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Elringus.UnityCommon.Editor.csproj">
+      <Project>{97c442de-845c-ca99-8359-0ac3e6eeabd5}</Project>
+      <Name>Elringus.UnityCommon.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

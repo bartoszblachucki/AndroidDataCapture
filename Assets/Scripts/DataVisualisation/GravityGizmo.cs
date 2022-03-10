@@ -9,10 +9,10 @@ namespace DataVisualisation
             if (GameManager.CurrentSensorData == null)
                 return;
         
-            if (!GameManager.CurrentSensorData.AttitudeData.HasValue)
+            if (!GameManager.CurrentSensorData.attitudeData.HasValue)
                 return;
 
-            var attitude = GameManager.CurrentSensorData.AttitudeData.Value;
+            var attitude = GameManager.CurrentSensorData.attitudeData.Value;
             var rotation = LeftToRightHandedRotation(attitude);
             transform.rotation = rotation;
         }

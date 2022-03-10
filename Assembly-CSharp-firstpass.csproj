@@ -52,8 +52,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\BluetoothHardwareInterface.cs" />
      <Compile Include="Assets\Plugins\BluetoothDeviceScript.cs" />
+     <Compile Include="Assets\Plugins\BluetoothHardwareInterface.cs" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -654,13 +654,13 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Elringus.UnityCommon.Editor.csproj">
-      <Project>{97c442de-845c-ca99-8359-0ac3e6eeabd5}</Project>
-      <Name>Elringus.UnityCommon.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Elringus.UnityCommon.Runtime.csproj">
       <Project>{f88ce8fe-9b40-0126-0857-de2fa8067861}</Project>
       <Name>Elringus.UnityCommon.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Elringus.UnityCommon.Editor.csproj">
+      <Project>{97c442de-845c-ca99-8359-0ac3e6eeabd5}</Project>
+      <Name>Elringus.UnityCommon.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

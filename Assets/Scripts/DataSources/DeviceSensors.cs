@@ -43,19 +43,6 @@ namespace DataSources
             _enabled = true;
         }
 
-        public static void Disable()
-        {
-            foreach (var sensor in Sensors)
-            {
-                if (sensor == null)
-                    continue;
-
-                InputSystem.DisableDevice(sensor);
-            }
-
-            _enabled = false;
-        }
-
         public static SensorData GetSensorData()
         {
             if (!_enabled)
@@ -76,36 +63,36 @@ namespace DataSources
 
             return new SensorData()
             {
-                AccelerometerData = accelerometerData,
-                GyroscopeData = gyroscopeData,
-                GravityData = gravityData,
-                AttitudeData = attitudeData,
-                LinearAcceleration = linearAccelerationData,
-                MagneticField = magneticFieldData,
-                LightLevel = lightData,
-                Pressure = pressureData,
-                Proximity = proximityData,
-                Humidity = humidityData,
-                AmbientTemperature = ambientTemperatureData,
-                StepCounter = stepCounterData
+                accelerometerData = accelerometerData,
+                gyroscopeData = gyroscopeData,
+                gravityData = gravityData,
+                attitudeData = attitudeData,
+                linearAcceleration = linearAccelerationData,
+                magneticField = magneticFieldData,
+                lightLevel = lightData,
+                pressure = pressureData,
+                proximity = proximityData,
+                humidity = humidityData,
+                ambientTemperature = ambientTemperatureData,
+                stepCounter = stepCounterData
             };
         }
 
         [System.Serializable]
         public class SensorData
         {
-            public UnityCommon.Nullable<Vector3> AccelerometerData;
-            public UnityCommon.Nullable<Vector3> GyroscopeData;
-            public UnityCommon.Nullable<Vector3> GravityData;
-            public UnityCommon.Nullable<Quaternion> AttitudeData;
-            public UnityCommon.Nullable<Vector3> LinearAcceleration;
-            public UnityCommon.Nullable<Vector3> MagneticField;
-            public UnityCommon.Nullable<float> LightLevel;
-            public UnityCommon.Nullable<float> Pressure;
-            public UnityCommon.Nullable<float> Proximity;
-            public UnityCommon.Nullable<float> Humidity;
-            public UnityCommon.Nullable<float> AmbientTemperature;
-            public UnityCommon.Nullable<float> StepCounter;
+            public UnityCommon.Nullable<Vector3> accelerometerData;
+            public UnityCommon.Nullable<Vector3> gyroscopeData;
+            public UnityCommon.Nullable<Vector3> gravityData;
+            public UnityCommon.Nullable<Quaternion> attitudeData;
+            public UnityCommon.Nullable<Vector3> linearAcceleration;
+            public UnityCommon.Nullable<Vector3> magneticField;
+            public UnityCommon.Nullable<float> lightLevel;
+            public UnityCommon.Nullable<float> pressure;
+            public UnityCommon.Nullable<float> proximity;
+            public UnityCommon.Nullable<float> humidity;
+            public UnityCommon.Nullable<float> ambientTemperature;
+            public UnityCommon.Nullable<float> stepCounter;
         }
     }
 }

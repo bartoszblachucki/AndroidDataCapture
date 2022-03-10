@@ -7,7 +7,7 @@ namespace DataVisualisation
     {
         protected void UpdateUI(DataUI dataUI, string label, Nullable<Vector3> value)
         {
-            if (value.HasValue)
+            if (value != null)
             {
                 dataUI.SetData(label, value.ToString(), Color.green);
             }
@@ -19,7 +19,7 @@ namespace DataVisualisation
 
         protected void UpdateUI(DataUI dataUI, string label, Nullable<float> value)
         {
-            if (value.HasValue)
+            if (value != null)
             {
                 dataUI.SetData(label, value.ToString(), Color.green);
             }
@@ -31,7 +31,7 @@ namespace DataVisualisation
 
         protected void UpdateUI(DataUI dataUI, string label, Nullable<Quaternion> value)
         {
-            if (value.HasValue)
+            if (value != null)
             {
                 dataUI.SetData(label, value.ToString(), Color.green);
             }

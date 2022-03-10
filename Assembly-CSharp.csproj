@@ -53,27 +53,27 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DataVisualisation\DataUI.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiState.cs" />
+     <Compile Include="Assets\Scripts\DataVisualisation\LocationUI.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidExtensions.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiScanResults.cs" />
      <Compile Include="Assets\Scripts\DataVisualisation\SensorsUI.cs" />
      <Compile Include="Assets\Scripts\DataVisualisation\DataPanelUI.cs" />
+     <Compile Include="Assets\Scripts\DataSources\DeviceWifi.cs" />
+     <Compile Include="Assets\Scripts\DataExporter.cs" />
+     <Compile Include="Assets\Scripts\DataSources\DeviceBluetooth.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiManager.cs" />
+     <Compile Include="Assets\Scripts\DataVisualisation\WifiUI.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Examples\Scripts\AndroidWifiManagerTester.cs" />
+     <Compile Include="Assets\Scripts\DataVisualisation\BluetoothBeaconsUI.cs" />
+     <Compile Include="Assets\Scripts\DataVisualisation\BluetoothUI.cs" />
+     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiConfiguration.cs" />
+     <Compile Include="Assets\Scripts\VolumeChangeListener.cs" />
      <Compile Include="Assets\Scripts\DataVisualisation\GravityGizmo.cs" />
      <Compile Include="Assets\Scripts\DataSources\DeviceSensors.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\DataSources\DeviceLocation.cs" />
-     <Compile Include="Assets\Scripts\DataVisualisation\LocationUI.cs" />
-     <Compile Include="Assets\Scripts\DataSources\DeviceBluetooth.cs" />
-     <Compile Include="Assets\Scripts\DataVisualisation\BluetoothUI.cs" />
-     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiState.cs" />
-     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidExtensions.cs" />
-     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiScanResults.cs" />
-     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiManager.cs" />
-     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Examples\Scripts\AndroidWifiManagerTester.cs" />
      <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiSecurityType.cs" />
-     <Compile Include="Assets\Imported\FSG\AndroidWifiManager\Scripts\AndroidWifiConfiguration.cs" />
-     <Compile Include="Assets\Scripts\DataSources\DeviceWifi.cs" />
-     <Compile Include="Assets\Scripts\DataVisualisation\WifiUI.cs" />
-     <Compile Include="Assets\Scripts\VolumeChangeListener.cs" />
-     <Compile Include="Assets\Scripts\DataExporter.cs" />
-     <Compile Include="Assets\Scripts\DataVisualisation\BluetoothBeaconsUI.cs" />
+     <Compile Include="Assets\Scripts\DataSources\DeviceLocation.cs" />
      <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -698,13 +698,13 @@
       <Project>{38b893fd-cdd5-94a4-6b34-f8fdbebc9c40}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
-    <ProjectReference Include="Elringus.UnityCommon.Editor.csproj">
-      <Project>{97c442de-845c-ca99-8359-0ac3e6eeabd5}</Project>
-      <Name>Elringus.UnityCommon.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Elringus.UnityCommon.Runtime.csproj">
       <Project>{f88ce8fe-9b40-0126-0857-de2fa8067861}</Project>
       <Name>Elringus.UnityCommon.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Elringus.UnityCommon.Editor.csproj">
+      <Project>{97c442de-845c-ca99-8359-0ac3e6eeabd5}</Project>
+      <Name>Elringus.UnityCommon.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

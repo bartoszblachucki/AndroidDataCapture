@@ -77,15 +77,7 @@ public class BluetoothLEHardwareInterface
 		Medium = 2,
 		High = 3,
 	}
-
-	public enum iOSProximity
-	{
-		Unknown = 0,
-		Immediate = 1,
-		Near = 2,
-		Far = 3,
-	}
-
+	
 	[System.Serializable]
 	public struct iBeaconData
 	{
@@ -95,6 +87,14 @@ public class BluetoothLEHardwareInterface
 		public int RSSI;
 		public int AndroidSignalPower;
 		public iOSProximity iOSProximity;
+	}
+	
+	public enum iOSProximity
+	{
+		Unknown = 0,
+		Immediate = 1,
+		Near = 2,
+		Far = 3,
 	}
 
 #if UNITY_ANDROID

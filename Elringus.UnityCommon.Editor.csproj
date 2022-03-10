@@ -52,29 +52,29 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Imported\UnityCommon\Editor\FolderAssetHelper.cs" />
      <Compile Include="Assets\Imported\UnityCommon\Editor\MinMaxRangePropertyDrawer.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\ResourceProvider\EditorFolderLocator.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\IntPopupPropertyDrawer.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\ResourceProvider\EditorResourceLoader.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\CaptureScreenshot.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\ReadOnlyPropertyDrawer.cs" />
      <Compile Include="Assets\Imported\UnityCommon\Editor\AutoSave.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\EditorUtils.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\ScriptOrderManager.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\ResourceProvider\EditorResourceLocator.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\PlayerPrefsEditor.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\ResourceProvider\EditorResourceProvider.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\IntPopupPropertyDrawer.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\CaptureScreenshot.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\SerializableMapPropertyDrawer.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\DrawAsEulerPropertyDrawer.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\FolderAssetPropertyDrawer.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\ProjectResourcesBuildProcessor.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\WebGLBuildProcessor.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\FolderAssetHelper.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\ResourceProvider\EditorFolderLocator.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\ResourceProvider\EditorResourceLoader.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\EvenRangePropertyDrawer.cs" />
      <Compile Include="Assets\Imported\UnityCommon\Editor\CountLinesOfCode.cs" />
      <Compile Include="Assets\Imported\UnityCommon\Editor\SwapScript.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\DrawAsEulerPropertyDrawer.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\ResourceProvider\EditorResourceLocator.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\EditorUtils.cs" />
+     <Compile Include="Assets\Imported\UnityCommon\Editor\ScriptOrderManager.cs" />
      <Compile Include="Assets\Imported\UnityCommon\Editor\PackageExporter.cs" />
      <Compile Include="Assets\Imported\UnityCommon\Editor\LabeledButtonEditor.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\FolderAssetPropertyDrawer.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\ReadOnlyPropertyDrawer.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\SerializableMapPropertyDrawer.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\PlayerPrefsEditor.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\ProjectResourcesBuildProcessor.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\EvenRangePropertyDrawer.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\WebGLBuildProcessor.cs" />
-     <Compile Include="Assets\Imported\UnityCommon\Editor\ResourceProvider\EditorResourceProvider.cs" />
      <None Include="Assets\Imported\UnityCommon\Editor\Elringus.UnityCommon.Editor.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

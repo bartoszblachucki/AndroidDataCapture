@@ -12,18 +12,18 @@ namespace DataVisualisation
             if (data == null)
                 return;
 
-            UpdateUI(dataUis[0], "Acceleration", data.AccelerometerData);
-            UpdateUI(dataUis[1], "Gyro", data.GyroscopeData);
-            UpdateUI(dataUis[2], "Gravity", data.GravityData);
-            UpdateUI(dataUis[3], "Attitude", data.AttitudeData);
-            UpdateUI(dataUis[4], "Linear Acceleration", data.LinearAcceleration);
-            UpdateUI(dataUis[5], "Magnetic Field", data.MagneticField);
-            UpdateUI(dataUis[6], "Light Level", data.LightLevel);
-            UpdateUI(dataUis[7], "Pressure", data.Pressure);
-            UpdateUI(dataUis[8], "Proximity", data.Proximity);
-            UpdateUI(dataUis[9], "Humidity", data.Humidity);
-            UpdateUI(dataUis[10], "Ambient Temp", data.AmbientTemperature);
-            UpdateUI(dataUis[11], "Step Counter", data.StepCounter);
+            UpdateUI(dataUis[0], "Acceleration", data.accelerometerData);
+            UpdateUI(dataUis[1], "Gyro", data.gyroscopeData);
+            UpdateUI(dataUis[2], "Gravity", data.gravityData);
+            UpdateUI(dataUis[3], "Attitude", data.attitudeData);
+            UpdateUI(dataUis[4], "Linear Acceleration", data.linearAcceleration);
+            UpdateUI(dataUis[5], "Magnetic Field", data.magneticField);
+            UpdateUI(dataUis[6], "Light Level", data.lightLevel);
+            UpdateUI(dataUis[7], "Pressure", data.pressure);
+            UpdateUI(dataUis[8], "Proximity", data.proximity);
+            UpdateUI(dataUis[9], "Humidity", data.humidity);
+            UpdateUI(dataUis[10], "Ambient Temp", data.ambientTemperature);
+            UpdateUI(dataUis[11], "Step Counter", data.stepCounter);
         }
     }
 }
